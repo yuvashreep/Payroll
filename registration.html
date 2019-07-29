@@ -1,0 +1,96 @@
+<html>
+<head>
+	<head>
+	<style>
+		body { 
+		background-image: url("welcome.png");
+		background-repeat: no-repeat;
+		background-attachment: fixed; }
+  div.transbox {
+  margin: 50px;
+  height: 1100px;
+  width : 400px;
+   background: rgba(240,240,240,0.9);
+  border: 3px ;
+  border-style: outset;
+}
+.button1 {
+  background-color: MediumSeaGreen; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px 1px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+	</style>
+</head>
+<body>
+	<center>
+<br>
+<div class ="transbox">
+<h1> <center>Employee Registration</center> </h1>
+<form name= "register" action="registration.php" method="post" onsubmit="return checkPassword(this)">
+	First Name : <input type="text" name="fname"> <br><br>
+	Last Name : <input type="text" name="lname"> <br><br>
+	Gender : <input type="radio" name="Gender" value="Male"> Male 
+		     <input type="radio" name="Gender" value="Female"> Female
+		     <input type="radio" name="Gender" value="Other"> Other <br><br>
+	Address : <br><textarea name="Address" rows="5" cols="50"></textarea><br><br>
+	Mobile Number : <input type ="text" name="phn1" maxlength="10" size="10"><br><br>
+	Alternative Phone Number :  <input type ="text" name="phn2" maxlength="10" size="10"><br><br>
+	E-Mail : <input type="text" placeholder="mymail@example.com" name="email"><br><br>
+	DOB : <input type="text" name="bday"><br><br>
+	Marital Status : <input type="radio" name="Marital" value="Yes"> Yes
+					 <input type="radio" name="Marital" value="No"> No <br><br>
+	Spouse Name : <input type="text" name="sname"><br><br>
+	Spouse Mobile Number : <input type ="text" name="sphn" maxlength="10" size="10"><br><br>
+	Job Title : <input type="text" name="title"><br><br>
+	Employee ID : <input type="text" name="empid"><br><br>
+	Password : <input type="password" name="pwd1"><br><br>
+	Re-enter Password : <input type="password" name="pwd2"><br><br>
+	<script>
+		function checkPassword(form)
+		{
+			password1=form.pwd1.value;
+			password2=form.pwd2.value;
+			if(password1=='')
+			{
+				alert("Please enter password");
+			}
+			else if(password2=='')
+			{
+				alert("Please confirm password");
+			}
+			else if(password1!=password2)
+			{
+				alert("Passwords do not match, try again");
+				return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+		</script>
+	Supervisor : <input type="text" name="Supervisor"><br><br>
+	Department : <input type="text" name="Department"><br><br>
+	Work Location : <input type="text" name="Location"><br><br>
+	Work Number : <input type="text" name="WorkNum" maxlength="10" size="10"><br><br>
+	<input type="submit" value="Register" class="button1 button2"><br><br>
+</form>
+<form action="login.html">
+	Already have an account? <input type="submit" value="Login" class="button1 button2"/>
+</form>
+	</center>
+</div>
+</body>
+</html>
